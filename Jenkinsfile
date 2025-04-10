@@ -2,8 +2,17 @@ node {
     def app
 
     stage('Clone repository') {
-        checkout scm
-    }
+            steps {
+                checkout scm: [
+                    $class: 'GitSCM',
+                    branches: [[name: '*/dev']],
+                    userRemoteConfigs: [[
+                        url: 'https://github.com/AtanasovskiPetar/jenkins-blueocean-pipeline.git',
+                        credentialsId: 'github_lab_4'
+                    ]]
+                ]
+            }
+        }
 
     stage('Build image') {
         app = docker.build('patanasovski/jenkins-lab-4')
