@@ -1,2 +1,2 @@
 # jenkins-blueocean-pipeline
-Jenkins Blueocean Pipeline for KIIS lab 4
+Jenkins Blueocean Pipeline for KIIS (DevOps) lab 4
